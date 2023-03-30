@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BMI Calculator</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-color: aliceblue;
+      }
+      #form {
+        background-color: rgb(138, 237, 204);
+        
+        
+         width: 350px;
+         height: 200px;
+      } 
+      .items{
+        padding: 2px;
+        text-align: center;
+    
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form">
+      <div class="items">
+        <h1>BMI Calculator</h1>
+
+        <p>
+          Weight(IN KG)
+          <input
+            class="weight"
+            type="text"
+            placeholder="Enter Your Weight in KG"
+          />
+        </p>
+        <p>
+          Height(IN METER)
+          <input
+            class="height"
+            type="text"
+            placeholder="Enter Your Height in Meter"
+          />
+        </p>
+
+        <button onclick="calculate()" id="calculateBtn">Calculate BMI</button>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        var kg = document.querySelector(".weight").value;
+        var m = document.querySelector(".height").value;
+        var BMI = kg / (m * m);
+
+        if (isNaN(kg) || isNaN(m)) {
+          alert("Please enter valid numbers for weight and height.");
+        } else {
+          alert(`Your BMI is = ` + BMI.toFixed(2));
+        }
+      }
+    </script>
+  </body>
+</html>
